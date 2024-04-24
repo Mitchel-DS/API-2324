@@ -1,24 +1,11 @@
 # API-2324 @cmda-minor-web
-![banner](/public/images/logo.png)
+![banner](/public/images/banner.png)
 
 Welcome to the documentation of the proces of my API project "Webflix".
 
-## Introduction
+## Introduction 
 
 This is Webflix, a streaming platform using the moviedb API. Here you will how I came up with the idea, the stages I went through and what I implented.
-
-## The idea
-
-The plan was to use the Moviedb API to make a movie streaming like website that showcases currently trending movies.
-
-## Proces log
-### Week 1
-
-### Week 2 
-
-### Week 3 
-
-### Week 4
 
 ## Installation
 
@@ -42,8 +29,35 @@ Run node
 npm run dev
 ```
 
-## Conclusion 
+### The idea
+
+The plan was to use the Moviedb API to make a movie streaming like website that showcases currently trending movies.
+
+## Features
+
+## Proces log
+### Week 1
+
+I started with brainstorming about what kinda of app I was going to make and which API to use. I previously used the Rijksmuseum API, so i wanted to try something else now. The moviedb api looked funny enough. 
+
+So, the idea's I had in mind were:
+- Using the Rijksmuseum api again
+- Streaming platform like Netflix, HBO.
+
+### Week 2 
+
+
+
+### Week 3 
+
+### Week 4 (Final)
+
+## Reflection
+
+## Sources
 
 ## License
 
 This repository is licensed as [MIT](LICENSE)
+
+Copyright © 2024 Mitchel Staal

@@ -1,9 +1,11 @@
 # API-2324 @cmda-minor-web
-![banner](./images/)
+![banner](/public/images/logo.png)
 
-Welcome to the documentation of the proces of my API project.
+Welcome to the documentation of the proces of my API project "Webflix".
 
 ## Introduction
+
+This is Webflix, a streaming platform using the moviedb API. Here you will how I came up with the idea, the stages I went through and what I implented.
 
 ## The idea
 

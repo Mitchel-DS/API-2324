@@ -14,6 +14,15 @@ app.get('/', async (req, res) => {
    res.render('pages/index') 
 });
 
+app.get('/', async (req, res) => {
+    try {
+        
+    } catch (error) {
+        console.log(error)
+    }
+ });
+
+
 // server port setup
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

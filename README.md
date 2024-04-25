@@ -60,4 +60,4 @@ So, the idea's I had in mind were:
 
 This repository is licensed as [MIT](LICENSE)
 
-Copyright © 2024 Mitchel Staal
+© 2024 Mitchel Staal

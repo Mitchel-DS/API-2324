@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&family=Syne:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;1,800;1,900&display=swap');
 
 /* reseting styling */
 *,
@@ -11,6 +13,51 @@
 
 /* root variables */
 :root {
-    --bg: #111;
+    /* color variables */
+    --main-bg-color: #202020;
+    --font-color: white;
+    --footer-font-color: #808080;
+
+    /* font variables */
+    --main-font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    --footer-font-family: 'Questrial', sans-serif;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    margin: 1em;
+}
+
+nav section img {
+    width: 130px;
+    padding: .5em;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 1em;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    font-family: var(--main-font-family);
+    height: 100vh;
+}
+
+footer p {
+    font-family: var(--footer-font-family);
+    color: var(--footer-font-color);
 }
 

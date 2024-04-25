@@ -1,26 +1,32 @@
 import express from 'express';
-import dotenv from 'dotenv';
-
-// dotenv
-dotenv.config();
-
 const app = express();
 
-app.use(express.urlencoded({ extended: true}));
+// dotenv
+import dotenv from 'dotenv';
+dotenv.config();
+
+
 app.set('view engine', 'ejs');
+app.set('views', './views');
 app.use(express.static('public'));
 
 app.get('/', async (req, res) => {
-   res.render('pages/index') 
-});
-
-app.get('/', async (req, res) => {
     try {
-        
+        res.render('pages/index', { title: "Home - Webflix"}) 
     } catch (error) {
         console.log(error)
     }
  });
+
+ app.get('/*', async (req, res) => {
+    try {
+        res.render('pages/404', { title: "Webflix"}) 
+    } catch (error) {
+        console.log(error)
+    }
+ });
+
+ // fetch movies
 
 
 // server port setup

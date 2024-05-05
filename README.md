@@ -56,6 +56,8 @@ So, the idea's I had in mind were:
 
 ## Sources
 
+* [The Movie Database - Getting started](https://developer.themoviedb.org/reference/intro/getting-started)
+
 ## License
 
 This repository is licensed as [MIT](LICENSE)

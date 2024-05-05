@@ -7,7 +7,27 @@
     <%- include('../partials/header.ejs') %>
     <main>
         <h1></h1>
-        <section class="trending"></section>
+        <section class="trending">
+            <h2>What to watch next</h2>
+                <ul>
+                    <% movies.forEach(movie=> { %>
+                        <li>
+                            <section class="poster">
+                                <% if (movie.poster_path) { %>
+                                    <img src="https://image.tmdb.org/t/p/w500<%= movie.poster_path %>" alt="<%= movie.title %>">
+                                    <% } else { %>
+                                        <img src="/images/logo.png" class="" alt="">
+                                        <% } %>
+                            </section> 
+                            <% if (movie.title) { %>
+                                <a href="/movie/<%= movie.id %>"><%= movie.title %></a>
+                                    <% } else { %>
+                                        <a href="/404">Movie not found</a>
+                                    <% } %>
+                        </li>
+                    <% }); %>
+                </ul>
+        </section>
         <section class="popular"></section>
     </main>
     <%- include('../partials/footer.ejs') %>

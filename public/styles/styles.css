@@ -56,6 +56,25 @@ body {
     height: 100vh;
 }
 
+main section.trending ul {
+    display: flex;
+    overflow: auto;
+}
+
+main section.trending ul li {
+    margin-top: 1em;
+    margin-left: 1em;
+    width: 230px;
+}
+
+main section.trending ul li:nth-last-child() {
+    margin-right: 1em;
+}
+
+main section.trending ul li img {
+    width: 230px;
+}
+
 footer p {
     font-family: var(--footer-font-family);
     color: var(--footer-font-color);

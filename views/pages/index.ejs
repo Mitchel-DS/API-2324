@@ -28,7 +28,27 @@
                     <% }); %>
                 </ul>
         </section>
-        <section class="popular"></section>
+        <section class="popular">
+            <h2>Trending series</h2>
+                <ul>
+                    <% series.forEach(serie=> { %>
+                        <li>
+                            <section class="poster">
+                                <% if (serie.poster_path) { %>
+                                    <img src="https://image.tmdb.org/t/p/w500<%= serie.poster_path %>" alt="<%= serie.name %>">
+                                    <% } else { %>
+                                        <img src="/images/logo.png" class="" alt="">
+                                        <% } %>
+                            </section> 
+                            <% if (serie.name) { %>
+                                <a href="/movie/<%= serie.id %>"><%= serie.name %></a>
+                                    <% } else { %>
+                                        <a href="/404">Serie not found</a>
+                                    <% } %>
+                        </li>
+                    <% }); %>
+                </ul>
+        </section>
     </main>
     <%- include('../partials/footer.ejs') %>
     <script src="/scripts/script.js"></script>

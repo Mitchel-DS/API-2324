@@ -16,9 +16,9 @@ app.get('/', async (req, res) => {
     try {
         const getMovies = await fetchMovies();
         const getSeries = await fetchSeries();
-        // console.log(getMovies);
+        console.log(getMovies);
         console.log(getSeries);
-        res.render('pages/index', { title: "Home - Webflix", movies: getMovies.results}) 
+        res.render('pages/index', { title: "Home - Webflix", movies: getMovies.results, series: getSeries.results}) 
     } catch (error) {
         console.log(error)
     }

@@ -33,8 +33,14 @@ const fetchTrendingSeries = async () => {
 
 const fetchSearchResults = async (searchQuery) => {
     const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${searchQuery}&page=1&api_key=${process.env.API_KEY}`);
-    const searchResults = await response.json()
+    const searchResults = await response.json();
     return searchResults;
+}
+
+const fetchDetails = async (movieID) => {
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${movieID}?language=en-US&api_key=${process.env.API_KEY}`)
+    const details = await response.json();
+    return details;
 }
 
 app.get('/', async (req, res) => {
@@ -51,7 +57,8 @@ app.get('/', async (req, res) => {
     try {
         const movieID = req.params.id;
         console.log(movieID);
-        res.render('pages/details', {title: movieID + " - Webflix"})
+        const getDetails = await fetchDetails(movieID);
+        res.render('pages/details', {title: getDetails.title + " - Webflix", details: getDetails.results})
     } catch (error) {
         console.log(error)
     }

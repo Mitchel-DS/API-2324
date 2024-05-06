@@ -32,7 +32,7 @@ const fetchTrendingSeries = async () => {
 }
 
 const fetchSearchResults = async (searchQuery) => {
-    const response = await fetch(`https://api.themoviedb.org/3/search/keyword?query=${searchQuery}&page=1&api_key=${process.env.API_KEY}`);
+    const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${searchQuery}&page=1&api_key=${process.env.API_KEY}`);
     const searchResults = await response.json()
     return searchResults;
 }
@@ -63,6 +63,7 @@ app.get('/', async (req, res) => {
         console.log(searchQuery);
         const getSearchResults = await fetchSearchResults(searchQuery);
         console.log(getSearchResults);
+        res.render('pages/search', {title: "Webflix", results: getSearchResults.results})
     } catch (error) {
         console.log(error)
     }

@@ -28,6 +28,7 @@
 nav {
     display: flex;
     position: fixed;
+    justify-content: space-between;
     align-items: center;
     padding: 1em;
     width: 100%;
@@ -61,26 +62,28 @@ nav ul li a {
 
 nav .search-container {
     position: relative;
-    width: 200px; /* Adjust width as needed */
-  }
+    width: 200px;
+    /* Adjust width as needed */
+}
+
+
+nav #search-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 2em;
+}
 
 nav form {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-  
-nav #search-input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 2em;
-    transition: width 0.4s ease-in-out; /* Smooth transition for animation */
-  }
-  
- nav #search-input:focus {
-    width: 300px; /* Expand width when focused */
-  } 
+
+nav form span {
+    color: var(--font-color);
+    margin-right: .5em;
+}
 
 body {
     background-color: var(--main-bg-color);
@@ -167,4 +170,3 @@ footer p {
     color: var(--footer-font-color);
     margin: 1em;
 }
-

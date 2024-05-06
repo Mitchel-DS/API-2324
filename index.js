@@ -58,7 +58,8 @@ app.get('/', async (req, res) => {
         const movieID = req.params.id;
         console.log(movieID);
         const getDetails = await fetchDetails(movieID);
-        res.render('pages/details', {title: getDetails.title + " - Webflix", details: getDetails.results})
+        console.log(getDetails.title)
+        res.render('pages/details', {title: getDetails.title + " - Webflix", details: getDetails})
     } catch (error) {
         console.log(error)
     }
@@ -69,7 +70,6 @@ app.get('/', async (req, res) => {
         const searchQuery = req.query.query;
         console.log(searchQuery);
         const getSearchResults = await fetchSearchResults(searchQuery);
-        console.log(getSearchResults);
         res.render('pages/search', {title: "Webflix", results: getSearchResults.results})
     } catch (error) {
         console.log(error)

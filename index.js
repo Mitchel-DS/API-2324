@@ -56,9 +56,9 @@ app.get('/', async (req, res) => {
  app.get('/movie/:id/', async (req, res) => {
     try {
         const movieID = req.params.id;
-        console.log(movieID);
+        // console.log(movieID);
         const getDetails = await fetchDetails(movieID);
-        console.log(getDetails.title)
+        console.log(getDetails)
         res.render('pages/details', {title: getDetails.title + " - Webflix", details: getDetails})
     } catch (error) {
         console.log(error)

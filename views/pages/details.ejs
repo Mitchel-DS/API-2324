@@ -5,12 +5,19 @@
 </head>
 <body>
     <%- include('../partials/header.ejs') %>
-    <main>
-        <h1></h1>
+    <main class="details">
+        <div class="detailsContainer">
+            <img src="https://image.tmdb.org/t/p/w500<%= details.poster_path %>" alt="<%= details.title %>">
+            <section class="movieDetails">
+                <h2><%= details.title %></h2>
+                <p><%= details.release_date %> | <%= details.runtime %></p>
+
+                <h3>Overview</h3>
+                <p><%= details.overview %></p>
+            </section>
+        </div>
         <section>
-            <h2>
-                <%= details.title %>
-            </h2>
+
         </section>
     </main>
     <%- include('../partials/footer.ejs') %>

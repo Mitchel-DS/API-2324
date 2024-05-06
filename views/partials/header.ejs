@@ -1,15 +1,18 @@
 <header>
     <nav>
-        <section>
+        <section class="links-container">
             <img src="/images/logo.png" alt="">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/trending">Trending</a></li>
+            </ul>
         </section>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="#trending">Trending</a></li>
-        </ul>
-        <div class="search-container">
-            <input type="text" id="search-input" placeholder="Search...">
-            <button id="search-btn">Search</button>
-          </div>
+      
+        <section class="search-container">
+            <form action="/search" method="get" id="search">
+                <span class="material-symbols-outlined">search</span>
+                <input type="search" name="query" id="search-input" placeholder="Search...">
+            </form>
+        </section>
     </nav>
 </header>

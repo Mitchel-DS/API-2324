@@ -43,6 +43,12 @@ const fetchDetails = async (movieID) => {
     return details;
 }
 
+const fetchRelatedMovies = async (movieID) => {
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${movieID}/recommendations?language=en-US&page=1&api_key=${process.env.API_KEY}`)
+    const related = await response.json();
+    return related;
+}
+
 app.get('/', async (req, res) => {
     try {
         const getMovies = await fetchTrendingMovies();
@@ -58,8 +64,9 @@ app.get('/', async (req, res) => {
         const movieID = req.params.id;
         // console.log(movieID);
         const getDetails = await fetchDetails(movieID);
+        const getRelated = await fetchRelatedMovies(movieID);
         console.log(getDetails)
-        res.render('pages/details', {title: getDetails.title + " - Webflix", details: getDetails})
+        res.render('pages/details', {title: getDetails.title + " - Webflix", details: getDetails, related: getRelated.results})
     } catch (error) {
         console.log(error)
     }

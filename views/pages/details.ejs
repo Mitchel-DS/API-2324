@@ -9,15 +9,20 @@
         <div class="detailsContainer">
             <img src="https://image.tmdb.org/t/p/w500<%= details.poster_path %>" alt="<%= details.title %>">
             <section class="movieDetails">
-                <h2><%= details.title %></h2>
-                <p><%= details.release_date %> | <%= details.runtime %></p>
+                <h2><%= details.title %><span> (<%= details.vote_average %>)</span></h2>
+                <span><%= details.release_date %> | <%= details.runtime %> min</span>
+                <p>"<%= details.tagline %>"</p>
 
                 <h3>Overview</h3>
                 <p><%= details.overview %></p>
+                <p><span>Genre </span><%= details.genres[0].name %></p>
+                <section class="relatedMovies">
+                    <h3>Related Movies</h3>                                                                                                                                                                      
+                </section>
             </section>
         </div>
-        <section>
-
+        <section class="reviewContainer">
+            <h2>Reviews</h2>
         </section>
     </main>
     <%- include('../partials/footer.ejs') %>

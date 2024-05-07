@@ -66,7 +66,6 @@ nav .search-container {
     /* Adjust width as needed */
 }
 
-
 nav #search-input {
     width: 100%;
     padding: 8px;
@@ -96,8 +95,94 @@ main {
     padding-top: 7em;
 }
 
+main a {
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+main section ul {
+    display: flex;
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+main section ul li {
+    list-style: none;
+}
+
+main.home h2 {
+    color: var(--font-color);
+    margin-left: 1em;
+}
+
+main.home section.trending ul li {
+    margin-top: 1em;
+    margin-left: 1em;
+    width: 230px;
+}
+
+main.home section.trending ul li:last-child {
+    margin-right: 1em;
+}
+
+main.home section.trending ul li img {
+    width: 230px;
+}
+
+main.home section.popular ul li {
+    margin-top: 1em;
+    margin-left: 1em;
+    width: 230px;
+}
+
+main.home section.popular ul li:last-child {
+    margin-right: 1em;
+}
+
+main.home section.popular ul li img {
+    width: 230px;
+}
+
 main.details div.detailsContainer {
     display: flex;
+    margin: 1em;
+}
+
+main.details div.detailsContainer img {
+    width: 400px;
+}
+
+main.details div.detailsContainer section.movieDetails {
+    margin: 1em;
+}
+
+main.details div.detailsContainer section.movieDetails span {
+    color: var(--footer-font-color);
+    margin-bottom: 1em;
+}
+
+main.details div.detailsContainer section.movieDetails h2 {
+    font-size: 3em;
+}
+
+main.details div.detailsContainer section.movieDetails h2 span {
+    color: gold;
+}
+
+main.details div.detailsContainer section.movieDetails h3 {
+    margin-top: 1em;
+}
+
+main.details div.detailsContainer section.movieDetails p {
+    margin-top: 1em;
+}
+
+main.details div.detailsContainer section.movieDetails p span {
+    margin-top: 1em;
+}
+
+main.details section.reviewContainer {
+    margin: 1em;
 }
 
 main.error {
@@ -120,54 +205,6 @@ main.error section a {
     margin: 1em;
     padding: 1em;
     border-radius: .5em;
-}
-
-main h2 {
-    color: var(--font-color);
-    margin-left: 1em;
-}
-
-main a {
-    text-decoration: none;
-    color: var(--font-color);
-}
-
-main section.trending ul {
-    display: flex;
-    overflow: auto;
-}
-
-main section.trending ul li {
-    margin-top: 1em;
-    margin-left: 1em;
-    width: 230px;
-}
-
-main section.trending ul li:last-child {
-    margin-right: 1em;
-}
-
-main section.trending ul li img {
-    width: 230px;
-}
-
-main section.popular ul {
-    display: flex;
-    overflow: auto;
-}
-
-main section.popular ul li {
-    margin-top: 1em;
-    margin-left: 1em;
-    width: 230px;
-}
-
-main section.popular ul li:last-child {
-    margin-right: 1em;
-}
-
-main section.popular ul li img {
-    width: 230px;
 }
 
 footer p {

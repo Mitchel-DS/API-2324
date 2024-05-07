@@ -14,7 +14,7 @@
                         <li>
                             <section class="poster">
                                 <% if (movie.poster_path) { %>
-                                    <a href="/movie/<%= movie.id %>"><img src="https://image.tmdb.org/t/p/w500<%= movie.poster_path %>" alt="<%= movie.title %>"></a>
+                                    <a href="/movie/<%= movie.id %>"><img src="https://image.tmdb.org/t/p/w500<%= movie.poster_path %>" alt="<%= movie.title %>" class="moviePoster"></a>
                                     <% } else { %>
                                         <img src="/images/logo.png" class="" alt="">
                                         <% } %>

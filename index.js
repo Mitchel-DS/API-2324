@@ -18,6 +18,7 @@ const fetchTrendingMovies = async () => {
     return movies;
 }
 
+// testing regional movie with ISO and geo API
 const fetchRegionMovies = async () => {
     const response = await fetch(`https://api.themoviedb.org/3/trending/movie/week?language=en-US&region=NL&api_key=${process.env.API_KEY}`);
     const regional = await response.json();

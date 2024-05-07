@@ -7,7 +7,7 @@
     <%- include('../partials/header.ejs') %>
     <main class="details">
         <div class="detailsContainer">
-            <a href="/movie/<%= details.id %>"><img src="https://image.tmdb.org/t/p/w500<%= details.poster_path %>" alt="<%= details.title %>" class="detailImage"></a>
+            <a href="/movie/<%= details.id %>"><img src="https://image.tmdb.org/t/p/w500<%= details.poster_path %>" alt="Poster of <%= details.title %>" class="detailImage"></a>
             <section class="movieDetails">
                 <h2><%= details.title %><span> (<%= details.vote_average %>)</span></h2>
                 <span><%= details.release_date %> | <%= details.runtime %> min</span>
@@ -25,13 +25,13 @@
                                     <% if (movie.poster_path) { %>
                                         <a href="/movie/<%= movie.id %>"><img src="https://image.tmdb.org/t/p/w500<%= movie.poster_path %>" alt="<%= movie.title %>"></a>
                                         <% } else { %>
-                                            <img src="/images/logo.png" class="" alt="">
+                                            <img src="/images/logo.png" alt="No poster available">
                                             <% } %>
                                 </section> 
-                                <% if (movie.title) { %>
-                                    <a href="/movie/<%= movie.id %>"><%= movie.title %></a>
+                                    <% if (movie.title) { %>
+                                        <a href="/movie/<%= movie.id %>"><%= movie.title %></a>
                                         <% } else { %>
-                                            <a href="/404">Movie not found</a>
+                                            <a href="/404">No movie title available</a>
                                         <% } %>
                             </li>
                         <% }); %>

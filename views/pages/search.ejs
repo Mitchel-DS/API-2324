@@ -16,7 +16,7 @@
                             <% if (result.poster_path) { %>
                                 <a href="/movie/<%= result.id %>"><img src="https://image.tmdb.org/t/p/w500<%= result.poster_path %>" alt="<%= result.title %>"></a>
                                 <% } else { %>
-                                    <img src="/images/logo.png" class="" alt="">
+                                    <img src="/images/logo.png" alt="No poster available">
                                     <% } %>
                         </section> 
                     </li>

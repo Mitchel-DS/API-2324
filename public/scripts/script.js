@@ -49,7 +49,8 @@ function convertToCountry(lat, long) {
         .then(data => {
             // Extract country code from the API response
             const countryCode = data.results[0].components.country_code;
-            console.log(countryCode);
+            const IsoCode = countryCode.toUpperCase();
+            console.log(IsoCode);
         })
         .catch(error => console.error('Error:', error));
     }

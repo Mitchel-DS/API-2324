@@ -33,6 +33,7 @@ nav {
     padding: 1em;
     width: 100%;
     background-color: var(--nav-bg-color);
+    z-index: 1000;
 }
 
 nav section.links-container {
@@ -110,6 +111,14 @@ main section ul {
 
 main section ul li {
     list-style: none;
+}
+
+main section ul li img {
+    transition: transform 0.3s ease;
+}
+
+main section ul li img:hover {
+    transform: scale(1.1);
 }
 
 main.home h2 {
@@ -220,7 +229,6 @@ main.details section.reviewContainer {
     margin: 3em;
     margin-left: 15em;
     margin-right: 15em;
-    color: var(--footer-font-color);
 }
 
 main.details section.reviewContainer ul {
@@ -230,6 +238,11 @@ main.details section.reviewContainer ul {
 
 main.details section.reviewContainer ul li {
     padding: 1em;
+}
+
+main.details section.reviewContainer ul li p {
+
+    color: var(--footer-font-color);
 }
 
 main.search section {
@@ -278,4 +291,34 @@ footer p {
     color: var(--footer-font-color);
     margin-top: 5em;
     padding: 1em;
+}
+
+@media screen and (width < 530px) {
+    nav ul {
+        display: none;
+    }
+
+    main.details div.detailsContainer {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    main.details div.detailsContainer img.detailImage {
+        max-width: 350px;
+        height: 600px;
+    }
+
+    main.details div.detailsContainer section.movieDetails h2 {
+        font-size: 2em;
+    }
+
+    main.details div.detailsContainer section.movieDetails section.relatedMovies {
+        display: none;
+    }
+
+    main.details section.reviewContainer {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 2em;
+    }
 }

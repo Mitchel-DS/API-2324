@@ -215,9 +215,6 @@ Here are some screenshots of the web application:
 * [The Movie Database - Getting started](https://developer.themoviedb.org/reference/intro/getting-started)
 * [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API#examples)
 * [OpenCage API](https://opencagedata.com/dashboard#geocoding)
-*[]()
-*[]()
-*[]()
 
 ## License
 

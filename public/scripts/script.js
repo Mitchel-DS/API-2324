@@ -40,7 +40,7 @@ getLocation();
 
 // converting geolocation to iso-code
 function convertToCountry(lat, long) {
-    const apiKey = '996ca33c42fd464dbec19f0261666e03'; // Replace with your API key
+    const apiKey = '996ca33c42fd464dbec19f0261666e03'; 
     const url = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${long}&key=${apiKey}`;
     
     // Fetch data from the API

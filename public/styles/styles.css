@@ -145,6 +145,20 @@ main.home section.popular ul li img {
     width: 230px;
 }
 
+main.home section.regional ul li {
+    margin-top: 1em;
+    margin-left: 1em;
+    width: 230px;
+}
+
+main.home section.regional ul li:last-child {
+    margin-right: 1em;
+}
+
+main.home section.regional ul li img {
+    width: 230px;
+}
+
 main.details div.detailsContainer {
     display: flex;
     align-items: center;

@@ -18,6 +18,12 @@ const fetchTrendingMovies = async () => {
     return movies;
 }
 
+const fetchRegionMovies = async () => {
+    const response = await fetch(`https://api.themoviedb.org/3/trending/movie/week?language=en-US&region=NL&api_key=${process.env.API_KEY}`);
+    const regional = await response.json();
+    return regional;
+}
+
 const fetchTrendingSeries = async () => {
     const response = await fetch(`https://api.themoviedb.org/3/trending/tv/week?language=en-US&api_key=${process.env.API_KEY}`);
     const series = await response.json();
@@ -52,7 +58,8 @@ app.get('/', async (req, res) => {
     try {
         const getMovies = await fetchTrendingMovies();
         const getSeries = await fetchTrendingSeries();
-        res.render('pages/index', { title: "Home - Webflix", movies: getMovies.results, series: getSeries.results}) 
+        const getRegional = await fetchRegionMovies();
+        res.render('pages/index', { title: "Home - Webflix", movies: getMovies.results, series: getSeries.results, regional: getRegional.results}) 
     } catch (error) {
         console.log(error)
     }

@@ -49,6 +49,27 @@
                     <% }); %>
                 </ul>
         </section>
+        <section class="regional">
+            <h2>Regional</h2>
+                <ul>
+                    <% regional.forEach(region=> { %>
+                        <li>
+                            <section class="poster">
+                                <% if (region.poster_path) { %>
+                                    <img src="https://image.tmdb.org/t/p/w500<%= region.poster_path %>" alt="<%= region.name %>">
+                                    <% } else { %>
+                                        <img src="/images/logo.png" class="" alt="">
+                                        <% } %>
+                            </section> 
+                            <% if (region.title) { %>
+                                <a href="/movie/<%= region.id %>"><%= region.title %></a>
+                                    <% } else { %>
+                                        <a href="/404">Serie not found</a>
+                                    <% } %>
+                        </li>
+                    <% }); %>
+                </ul>
+        </section>
     </main>
     <%- include('../partials/footer.ejs') %>
     <script src="/scripts/script.js"></script>

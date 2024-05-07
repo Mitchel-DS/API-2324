@@ -5,25 +5,20 @@
 </head>
 <body>
     <%- include('../partials/header.ejs') %>
-    <main>
+    <main class="search">
         <h1></h1>
         <section>
-            <h2></h2>
+            <h2>Search results for: <%= query %></h2>
             <ul>
                 <% results.forEach(result=> { %>
                     <li>
                         <section class="poster">
                             <% if (result.poster_path) { %>
-                                <img src="https://image.tmdb.org/t/p/w500<%= result.poster_path %>" alt="<%= result.title %>">
+                                <a href="/movie/<%= result.id %>"><img src="https://image.tmdb.org/t/p/w500<%= result.poster_path %>" alt="<%= result.title %>"></a>
                                 <% } else { %>
                                     <img src="/images/logo.png" class="" alt="">
                                     <% } %>
                         </section> 
-                        <% if (result.title) { %>
-                            <a href="/movie/<%= result.id %>"><%= result.title %></a>
-                                <% } else { %>
-                                    <a href="/404">Movie not found</a>
-                                <% } %>
                     </li>
                 <% }); %>
             </ul>

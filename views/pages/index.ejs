@@ -14,13 +14,13 @@
                         <li>
                             <section class="poster">
                                 <% if (movie.poster_path) { %>
-                                    <img src="https://image.tmdb.org/t/p/w500<%= movie.poster_path %>" alt="<%= movie.title %>">
+                                    <a href="/movie/<%= movie.id %>"><img src="https://image.tmdb.org/t/p/w500<%= movie.poster_path %>" alt="<%= movie.title %>"></a>
                                     <% } else { %>
                                         <img src="/images/logo.png" class="" alt="">
                                         <% } %>
                             </section> 
                             <% if (movie.title) { %>
-                                <a href="/movie/<%= movie.id %>"><%= movie.title %></a>
+                                <a href="/movie/<%= movie.id %>"><%= movie.title %>
                                     <% } else { %>
                                         <a href="/404">Movie not found</a>
                                     <% } %>

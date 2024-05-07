@@ -12,13 +12,6 @@ app.set('view engine', 'ejs');
 app.set('views', './views');
 app.use(express.static('public'));
 
-
-const fetchNowPlaying = async () => {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=${process.env.API_KEY}`);
-    const now_playing = await response.json();
-    return now_playing;
-}
-
 const fetchTrendingMovies = async () => {
     const response = await fetch(`https://api.themoviedb.org/3/trending/movie/week?language=en-US&api_key=${process.env.API_KEY}`);
     const movies = await response.json();
@@ -49,6 +42,12 @@ const fetchRelatedMovies = async (movieID) => {
     return related;
 }
 
+const fetchReviews = async (movieID) => {
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${movieID}/reviews?language=en-US&page=1&api_key=${process.env.API_KEY}`)
+    const reviews = await response.json();
+    return reviews;
+}
+
 app.get('/', async (req, res) => {
     try {
         const getMovies = await fetchTrendingMovies();
@@ -62,11 +61,10 @@ app.get('/', async (req, res) => {
  app.get('/movie/:id/', async (req, res) => {
     try {
         const movieID = req.params.id;
-        // console.log(movieID);
         const getDetails = await fetchDetails(movieID);
         const getRelated = await fetchRelatedMovies(movieID);
-        console.log(getDetails)
-        res.render('pages/details', {title: getDetails.title + " - Webflix", details: getDetails, related: getRelated.results})
+        const getReviews = await fetchReviews(movieID);
+        res.render('pages/details', {title: getDetails.title + " - Webflix", details: getDetails, related: getRelated.results, reviews: getReviews.results})
     } catch (error) {
         console.log(error)
     }
@@ -75,9 +73,9 @@ app.get('/', async (req, res) => {
  app.get('/search', async (req, res) => {
      try {
         const searchQuery = req.query.query;
-        console.log(searchQuery);
         const getSearchResults = await fetchSearchResults(searchQuery);
-        res.render('pages/search', {title: "Webflix", results: getSearchResults.results})
+        console.log(searchQuery);
+        res.render('pages/search', {title: "Webflix", results: getSearchResults.results, query: searchQuery})
     } catch (error) {
         console.log(error)
     }

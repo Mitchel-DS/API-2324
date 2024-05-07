@@ -37,10 +37,12 @@ nav {
 
 nav section.links-container {
     display: flex;
+    align-items: center;
 }
 
-nav section img {
+nav section a img {
     width: 130px;
+    margin-top: .5em;
     padding: .5em;
 }
 
@@ -91,8 +93,8 @@ body {
 }
 
 main {
-    height: 100vh;
-    padding-top: 7em;
+    /* height: 100vh; */
+    padding-top: 8em;
 }
 
 main a {
@@ -145,11 +147,14 @@ main.home section.popular ul li img {
 
 main.details div.detailsContainer {
     display: flex;
+    align-items: center;
     margin: 1em;
+    max-width: 80%;
 }
 
-main.details div.detailsContainer img {
-    width: 400px;
+main.details div.detailsContainer img.detailImage {
+    width: 450px;
+    height: 700px;
 }
 
 main.details div.detailsContainer section.movieDetails {
@@ -179,10 +184,57 @@ main.details div.detailsContainer section.movieDetails p {
 
 main.details div.detailsContainer section.movieDetails p span {
     margin-top: 1em;
+    padding-right: 3em;
+}
+
+main.details div.detailsContainer section.movieDetails section.relatedMovies {
+    margin-top: 2em;
+}
+
+main.details div.detailsContainer section.movieDetails section.relatedMovies ul {
+    margin-top: 1em;
+    width: 750px;
+    overflow: auto;
+}
+
+main.details div.detailsContainer section.movieDetails section.relatedMovies ul li img {
+    max-height: 280px;
+    margin-right: 1em;
 }
 
 main.details section.reviewContainer {
+    margin: 3em;
+    margin-left: 15em;
+    margin-right: 15em;
+    color: var(--footer-font-color);
+}
+
+main.details section.reviewContainer ul {
+    display: flex;
+    flex-direction: column;
+}
+
+main.details section.reviewContainer ul li {
+    padding: 1em;
+}
+
+main.search section {
     margin: 1em;
+}
+
+main.search section h2 {
+    margin-bottom: 1em;
+}
+
+main.search section ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+main.search section ul li {
+    display: grid;
 }
 
 main.error {
@@ -210,5 +262,6 @@ main.error section a {
 footer p {
     font-family: var(--footer-font-family);
     color: var(--footer-font-color);
-    margin: 1em;
+    margin-top: 5em;
+    padding: 1em;
 }

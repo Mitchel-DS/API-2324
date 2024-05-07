@@ -202,6 +202,13 @@ Althought i was able to finish what was require, I do think I was able to get mo
 Here are some screenshots of the web application:
 
 ![Home page](/public/images/home.png)
+![Search page](/public/images/search.png)
+![Details page](/public/images/details.png)
+
+-- Mobile versions
+
+![Mobile Home page](/public/images/m_home.png)
+![Mobile Search page](/public/images/m_search.png)
 
 ## Sources
 
